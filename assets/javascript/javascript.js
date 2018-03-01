@@ -19,52 +19,13 @@ $(document).ready(function () {
 	var searchkey = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
 	// Giphy API endPoint address
-	var endPoint = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey  + "&limit=10&offset=0&rating=G&lang=en"+ "&q=";
-	
+	var endPoint = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&offset=0&rating=G&lang=en" + "&q=";
+
 	// Functions
 	// --------------------------------------------------------------------------------------
 	//
 
-	// onclick for all created buttons
-	$(document).on("click", ".search-value", function (value) {
 
-		
-		// console.log(value);
-		// console.log(value.target.innerText);
-		searchvalue = value.target.innerText;
-		console.log(searchvalue);
-
-		var link = endPoint + searchvalue; 
-
-		console.log("you got in");
-		// queries Giphy for 10 images then console.log() the responce
-		$.ajax({
-			url: link,
-			method: "GET"
-		}).then(function (response) {
-			console.log(response)
-
-			var results = response.data;
-
-					for (var i = 0; i < results.length; i++) {
-
-						var gifDiv = $("<div class='item'>");
-
-						var rating = results[i].rating;
-
-						var p = $("<p>").text("Rating: " + rating);
-
-						var resultsImage = $("<img>");
-
-						resultsImage.attr("src", results[i].images.fixed_height.url);
-
-						gifDiv.append(p);
-						gifDiv.append(resultsImage);
-
-						$("#results").prepend(gifDiv);
-					}
-		});
-	});
 
 	function renderButtons() {
 
@@ -91,33 +52,79 @@ $(document).ready(function () {
 
 		// This line will grab the text from the input box
 		var search = $("#search-input").val().trim();
-		// The search from the textbox is then added to our array
-		console.log(search);
-		console.log(this);
-		searchkey.push(search);
-		console.log(searchkey);
-		// calling renderButtons which handles the processing of our movie array
-		renderButtons();
+
+		
+	//prevent adding blank buttons
+		if (search == !null) {
+
+			renderButtons();
+
+			searchkey.push(search);
+
+		// testing
+		// console.log(search);
+		// console.log(this);
+		// console.log(searchkey);
+		}
 	});
-
-	renderButtons();
-
-
-
 
 
 	// Process
 	// --------------------------------------------------------------------------------------
-	// 
+	// initial button rendering
+	renderButtons();
 
 
+	// onclick for all created buttons
+	$(document).on("click", ".search-value", function (value) {
 
-	// onclick of buttons load new image(10) onto page; removing old images
+
+		// console.log(value);
+		// console.log(value.target.innerText);
+		searchvalue = value.target.innerText;
+		console.log(searchvalue);
+
+		var link = endPoint + searchvalue;
+
+		console.log("you got in");
+		// queries Giphy for 10 images then console.log() the responce
+		$.ajax({
+			url: link,
+			method: "GET"
+		}).then(function (response) {
+			// console.log(response)
+
+			// clear the results div
+			$("#results").empty();
+
+			var results = response.data;
+
+			for (var i = 0; i < results.length; i++) {
+
+				var gifDiv = $("<div class='item'>");
+
+				var rating = results[i].rating;
+
+				var p = $("<p>").text("Rating: " + rating);
+
+				var resultsImage = $("<img>");
+
+				resultsImage.attr("src", results[i].images.fixed_height.url);
+
+				gifDiv.append(p);
+				gifDiv.append(resultsImage);
+
+				$("#results").prepend(gifDiv);
+			}
+		});
+	});
+
 
 	// play/pause gifs
 
 	// is that too simple....
-	//prevent adding blank buttons
+//  try to comment each line
+// style page
 
 
 });
