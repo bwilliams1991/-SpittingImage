@@ -1,0 +1,32 @@
+.borderHelper {
+	/* border: 2px solid red; */
+}
+
+.underline {
+	border-bottom: 2px solid gray;
+}
+
+.results {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.item {
+	order: 1;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header-h1 {
+	order: 1;
+}
+
+.header-h3 {
+	order: 2;
+}

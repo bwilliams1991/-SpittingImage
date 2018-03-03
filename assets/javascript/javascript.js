@@ -36,6 +36,7 @@ $(document).ready(function () {
 	function renderButtons() {
 
 		$("#buttons").empty();
+		// console.log('hi');
 
 		for (var i = 0; i < searchkey.length; i++) {
 
@@ -48,33 +49,40 @@ $(document).ready(function () {
 			buttons.text(searchkey[i]);
 
 			$("#buttons").append(buttons);
+			// console.log('hi');
 		}
 	}
 
 	$("#add-search").on("click", function (event) {
-		// event.preventDefault() prevents the form from trying to submit itself.
-		// We're using a form so that the user can hit enter instead of clicking the button if they want
+	
 		event.preventDefault();
 
-		// This line will grab the text from the input box
-		var search = $("#search-input").val().trim();
-
-
-		//prevent adding blank buttons
-		if (search == !null) {
-
-			renderButtons();
-
-			searchkey.push(search);
+		addbuttons();
+		
 
 			// testing
 			// console.log(search);
 			// console.log(this);
 			// console.log(searchkey);
-		}
+		
 	});
 
+	function addbuttons(){
+		var search = $("#search-input").val().trim();
+		console.log('out');
+
+		//prevent adding blank buttons
+		if (search != "") {
+
+			renderButtons();
+			console.log('in');
+			searchkey.push(search);
+	}
+};
+
+// function for clicked gifs
 	function clickGif() {
+		
 		var currentGif = $(this);
 		var state = currentGif.attr("data-state");
 
@@ -133,12 +141,9 @@ $(document).ready(function () {
 
 				var resultsImage = $("<img class='gif'>");
 
-
-
-
-				console.log(still);
-				console.log(animate);
-				console.log(state);
+				// console.log(still);
+				// console.log(animate);
+				// console.log(state);
 
 				resultsImage.attr("src", results[i].images.fixed_height_still.url);
 				resultsImage.attr("data-state", state);

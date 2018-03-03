@@ -8,9 +8,10 @@
 
 	<!-- Linking CSS -->
 	<!-- Linking Bootstrap v3.3.7 -->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	 crossorigin="anonymous">
+	<link rel="stylesheet" 
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
 	<!-- Linking myStyles  -->
 	<link rel="stylesheet" href="./assets/css/style.css">
 
@@ -18,24 +19,42 @@
 </head>
 
 <body>
-	<!-- basic layout, improve styling once functionality is proven -->
-	<div id="buttons">
-
+	<div class="navbar nav header text-center">
+		<h1 class="underline header-h1">Spitting Images</h1>
+		
+		<h3 class="header-h3">Add a search term or click an old one</h3>
 	</div>
 
-	<form id="search-form">
-		<label for="search-input">Add a search Bro</label>
-		<input type="text" id="search-input"><br>
 
-		<!-- Button triggers new search to be added -->
-		<input id="add-search" type="submit" value="Add a search Bro">
-	</form>
+	<div class="container">
+		<!-- basic layout, improve styling once functionality is proven -->
+		<div class="row">
+
+			<div class="col-md-9 borderHelper">
+				<div class="results" id="results"></div>
+			</div>
+
+			<div class="col-md-3">
+				<form class="borderHelper" id="search-form">
+					<label for="search-input">Add a search Bro</label>
+					<input type="text" id="search-input">
+					<br>
+
+					<!-- Button triggers new search to be added -->
+					<input id="add-search" type="submit" value="Add a search Bro">
+				
+				</form>
+				<br>
+
+				<div class="borderHelper" id="buttons"></div>
+			</div>
 
 
 
 
-	<div id="results"></div>
 
+		</div>
+	</div>
 	<!-- Adding Javascript -->
 	<!-- Adding JQuery -->
 	<script src="./assets/javascript/jquery-3.3.1.min.js"></script>
