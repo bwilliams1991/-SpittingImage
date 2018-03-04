@@ -69,14 +69,15 @@ $(document).ready(function () {
 
 	function addbuttons(){
 		var search = $("#search-input").val().trim();
-		console.log('out');
+		// console.log('out');
 
 		//prevent adding blank buttons
 		if (search != "") {
 
-			renderButtons();
-			console.log('in');
+			
+			// console.log('in');
 			searchkey.push(search);
+			renderButtons();
 	}
 };
 
