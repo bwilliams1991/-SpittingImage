@@ -16,7 +16,7 @@ $(document).ready(function () {
 	// temp searchkey
 	// var searchkey = "dog";
 	// search key array
-	var searchkey = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+	var searchkey = ["The Matrix", "Lie to Me", "Inception", "Firefly"];
 
 	// Giphy API endPoint address
 	var endPoint = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&offset=0&rating=G&lang=en" + "&q=";
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 			var buttons = $("<button>");
 
-			buttons.addClass("search-value");
+			buttons.addClass("search-value btn btn-default bn-sm myButton");
 
 			buttons.attr("data-name", searchkey[i]);
 

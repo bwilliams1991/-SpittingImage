@@ -8,10 +8,8 @@
 
 	<!-- Linking CSS -->
 	<!-- Linking Bootstrap v3.3.7 -->
-	<link rel="stylesheet" 
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
 	<!-- Linking myStyles  -->
 	<link rel="stylesheet" href="./assets/css/style.css">
 
@@ -19,42 +17,40 @@
 </head>
 
 <body>
-	<div class="navbar nav header text-center">
-		<h1 class="underline header-h1">Spitting Images</h1>
-		
-		<h3 class="header-h3">Add a search term or click an old one</h3>
-	</div>
+	<div class="navbar nav">
+		<div class="text-center header">
+			<h1 class="underline header-h1">Spitting Images</h1>
+		</div>
 
+		<div class="text-center header">
+
+			<h3 class="header-h3">Add a search term or click an old one</h3>
+		
+				<form id="search-form">
+					<label for="search-input"></label>
+					<input type="text" class="myForm form-control" id="search-input">
+
+					<!-- Button triggers new search to be added -->
+					<input class="btn btn-default myButton" id="add-search" type="submit" value="Add Search">
+
+				</form>		
+		</div>
+	</div>
 
 	<div class="container">
 		<!-- basic layout, improve styling once functionality is proven -->
 		<div class="row">
 
-			<div class="col-md-9 borderHelper">
+			<div class="col-md-10 borderHelper">
 				<div class="results" id="results"></div>
 			</div>
 
-			<div class="col-md-3">
-				<form class="borderHelper" id="search-form">
-					<label for="search-input">Add a search Bro</label>
-					<input type="text" id="search-input">
-					<br>
-
-					<!-- Button triggers new search to be added -->
-					<input id="add-search" type="submit" value="Add a search Bro">
-				
-				</form>
-				<br>
-
+			<div class="col-md-2 button-holder">
 				<div class="borderHelper" id="buttons"></div>
 			</div>
-
-
-
-
-
 		</div>
 	</div>
+
 	<!-- Adding Javascript -->
 	<!-- Adding JQuery -->
 	<script src="./assets/javascript/jquery-3.3.1.min.js"></script>

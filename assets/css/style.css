@@ -1,5 +1,5 @@
 /* colors */
-.color-primary-0 { color: #A00C74 }	/* Main Primary color */
+.color-primary-0 { color: # }	/* Main Primary color */
 .color-primary-1 { color: #C34D9F }
 .color-primary-2 { color: #B42A8A }
 .color-primary-3 { color: #82025B }
@@ -18,22 +18,45 @@
 .color-secondary-2-4 { color: #0C0A5C }
 /* end colors */
 
-
+body {
+	background: black;
+	color: #D46E0F;
+}
 
 
 .borderHelper {
-	border: 2px solid red;
+	/* border: 2px solid white; */
 }
 
 .underline {
 	border-bottom: 2px solid gray;
 }
 
-.results {
+.results{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
+}
+
+.search-value {
+	margin:auto;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.myForm {
+	width: 20%;
+	display: inline-block;
+	background: black;
+	color: #D46E0F;
+	border: 2px solid grey; 
+}
+
+.myButton {
+ background: grey;
+ opacity: .5;
+ color: white; !important
 }
 
 .item {
@@ -52,4 +75,8 @@
 
 .header-h3 {
 	order: 2;
+}
+
+.container {
+	margin-bottom: 50px;
 }
